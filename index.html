@@ -1,7 +1,26 @@
 <html>
 <head>
+<script src="https://api.provereno.org/v1/provereno.js">
+</script>
 </head>
 <body>
-Hello, world!
+<script>
+	provereno.init({key: 'FA872702639645DC89F0FC1BE900591B', endpoint: 'https://api.provereno.org/v1', project: 'PROMOTEST'});
+</script>
+Hello, Provereno!
+<input id="code" />
+<button onclick="check_code()">Check code</button>
+<script>
+function check_code() {
+   var code = document.getElementById('code').value
+   provereno.check_code({ code: code }, function(result) {
+         console.log(result)
+	// result.data.token - используется для отправки формы данных выигрывших пользователей
+
+});
+
+}
+</script>
+
 </body>
 </html>
