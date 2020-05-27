@@ -23,10 +23,8 @@ function check_code() {
 function post_data() {
   var userdata = { name: "Тимур", tel: "9172278848", email: "timurkin@mail.ru" };
   provereno.post_user_data({ token: window.token, userdata: JSON.stringify(userdata)}, function(result) {
-
-	alert (JSON.stringify(result.data));
-
-   });
+        console.log(JSON.parse(result.data))
+  });
 
 }
 </script>
