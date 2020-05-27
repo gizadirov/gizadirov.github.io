@@ -15,8 +15,7 @@ Hello, Provereno!
 function check_code() {
    var code = document.getElementById('code').value
    provereno.check_code({ code: code }, function(result) {
-	var data = result.data;
-	alert (JSON.stringify(result.data));
+	var data = JSON.parse(result.data);
 	if (data['token']) token = data['token']
    });
 
