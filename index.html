@@ -16,13 +16,13 @@ function check_code() {
    var code = document.getElementById('code').value
    provereno.check_code({ code: code }, function(result) {
 	var data = JSON.parse(result.data);
-	if (data['token']) token = data['token']
+	if (data['token']) window.token = data['token']
    });
 
 }
 function post_data() {
   var userdata = { name: "Тимур", tel: "9172278848", email: "timurkin@mail.ru" };
-  provereno.post_user_data({ token: token, userdata: JSON.stringify(userdata)}, function(result) {
+  provereno.post_user_data({ token: window.token, userdata: JSON.stringify(userdata)}, function(result) {
 
 	alert (JSON.stringify(result.data));
 
