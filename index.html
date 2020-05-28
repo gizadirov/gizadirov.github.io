@@ -5,7 +5,7 @@
 </head>
 <body>
 <script>
-	provereno.init({key: 'FA872702639645DC89F0FC1BE900591B', endpoint: 'https://api.provereno.org/v1', project: 'PROMOTEST'});
+	provereno.init({key: '44548963-ff68-4a4a-89ec-9e71db0807ca', endpoint: 'https://api.provereno.org/v1', project: 'RUZIK'});
 </script>
 Hello, Provereno!
 <input id="code" />
@@ -16,7 +16,9 @@ function check_code() {
    var code = document.getElementById('code').value
    provereno.check_code({ code: code }, function(result) {
 	var data = JSON.parse(result.data);
-	if (data['token']) window.token = data['token']
+        console.log(data)
+	if (data.data['token']) window.token = data.data['token']
+	console.log(window.token)
    });
 
 }
